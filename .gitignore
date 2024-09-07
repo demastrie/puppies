@@ -1,0 +1,41 @@
+# General
+.DS_Store
+.idea/
+*.pyc
+*.swp
+__pycache__/
+Thumbs.db
+
+# macOS specific
+.AppleDouble
+.LSOverride
+
+# Virtual Environment
+.venv/
+
+# Streamlit specific
+.streamlit/
+
+# Secrets and Configuration
+*.toml
+*.ini
+*.yaml
+credentials.yml
+config.json
+
+# Data Files (consider if you want to version large datasets)
+#*.csv
+#*.json
+#*.xlsx
+
+# Logs
+*.log
+
+# Dependencies
+/node_modules/
+
+# Production build
+/build/
+
+# If you have compiled C extensions (rare in Streamlit projects)
+*.so

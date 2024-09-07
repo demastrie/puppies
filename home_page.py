@@ -32,8 +32,8 @@ df_puppy_weights_pivoted = df_puppy_weights.pivot(index='date',
                                                   columns='name')['weight-gm']
 
 earliest_date = df_puppy_weights['date'].min()
-df_puppy_weights['days_old'] = df_puppy_weights['date'] - earliest_date
-df_puppy_weights['days_old'] = df_puppy_weights['days_old'].dt.days.astype(int)
+df_puppy_weights['days-old'] = df_puppy_weights['date'] - earliest_date
+df_puppy_weights['days-old'] = df_puppy_weights['days-old'].dt.days.astype(int)
 
 df_puppy_weights_pivoted.columns.name = None
 

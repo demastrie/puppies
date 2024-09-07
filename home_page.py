@@ -37,7 +37,8 @@ df_puppy_weights['days_old'] = df_puppy_weights['days_old'].dt.days.astype(int)
 
 df_puppy_weights_pivoted.columns.name = None
 
-st.line_chart(df_puppy_weights_pivoted, y=df_puppy_weights_pivoted.columns)
+st.line_chart(df_puppy_weights_pivoted, y=df_puppy_weights_pivoted.columns,
+              x_label="2024", y_label="Weight in grams")
 st.dataframe(df_puppy_weights_pivoted)
 
 # show the larger dataframe

@@ -43,4 +43,9 @@ st.dataframe(df_puppy_weights_pivoted)
 
 # show the larger dataframe
 if st.checkbox('Show all puppy weight data'):
-    st.dataframe(df_puppy_weights)
+    names = df_puppy_weights.name.unique()
+    puppies = st.multiselect("Names: ",
+                             names,
+                             names)
+    st.dataframe(df_puppy_weights.loc[df_puppy_weights.name.isin(puppies)])
+

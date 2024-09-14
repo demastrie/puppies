@@ -22,7 +22,7 @@ df_puppy_weights['pounds_float'] = df_puppy_weights['weight-oz'] / 16
 df_puppy_weights['pounds'] = df_puppy_weights['pounds_float'].astype(int)
 df_puppy_weights['ounces'] = ((df_puppy_weights['pounds_float']
                                - df_puppy_weights['pounds']) * 16) \
-                                .round().astype(int)
+                                .round(2).astype(float)
 df_puppy_weights['weight-lboz'] = df_puppy_weights.apply(format_weight, axis=1)
 df_puppy_weights.drop(['pounds_float', 'pounds', 'ounces'],
                       axis=1, inplace=True)
@@ -42,10 +42,10 @@ st.line_chart(df_puppy_weights_pivoted, y=df_puppy_weights_pivoted.columns,
 st.dataframe(df_puppy_weights_pivoted)
 
 # show the larger dataframe
-if st.checkbox('Show all puppy weight data'):
+if st.checkbox('Show all puppy weight data', value=True):
     names = df_puppy_weights.name.unique()
     puppies = st.multiselect("Names: ",
                              names,
                              names)
-    st.dataframe(df_puppy_weights.loc[df_puppy_weights.name.isin(puppies)])
-
+    st.dataframe(df_puppy_weights.loc[df_puppy_weights.name.isin(puppies)]
+                 .sort_values(by=['date'], ascending=False))

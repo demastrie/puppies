@@ -39,7 +39,8 @@ df_puppy_weights_pivoted.columns.name = None
 
 st.line_chart(df_puppy_weights_pivoted, y=df_puppy_weights_pivoted.columns,
               x_label="2024", y_label="Weight in grams")
-st.dataframe(df_puppy_weights_pivoted)
+st.dataframe(df_puppy_weights_pivoted
+             .sort_values(by=['date'], ascending=False))
 
 # show the larger dataframe
 if st.checkbox('Show all puppy weight data', value=True):

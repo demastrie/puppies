@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-PAGE_TITLE='Puppy Weight Tracker'
+PAGE_TITLE = 'Puppy Weight Tracker'
 st.set_page_config(
         page_title=PAGE_TITLE,
 )

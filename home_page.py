@@ -1,8 +1,11 @@
 import streamlit as st
 import pandas as pd
 
-
-st.title('Puppy Weight Tracker')
+PAGE_TITLE='Puppy Weight Tracker'
+st.set_page_config(
+        page_title=PAGE_TITLE,
+)
+st.title(PAGE_TITLE)
 df_puppy_weights = pd.read_csv('puppy-weights.csv')
 df_puppy_weights = df_puppy_weights.dropna()
 df_puppy_weights['date'] = pd.to_datetime(df_puppy_weights['date'])

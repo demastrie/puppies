@@ -16,6 +16,7 @@ df_puppy_weights['weight-oz'] = df_puppy_weights['weight-gm'] * 0.03527396
 
 def format_weight(row):
     '''format_weight(row) returns the weight in pounds and ounces'''
+
     pounds_str = f"{row['pounds']} lb " if row['pounds'] > 0 else ""
     ounces_str = f"{row['ounces']} oz" if row['ounces'] > 0 else ""
     return pounds_str + ounces_str
